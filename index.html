@@ -1,5 +1,158 @@
 <!doctype html>
-<html>
-  <head><title>Is it time for water?</title></head>
-  <body>Coming soon.</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Is it time for water?</title>
+    <meta
+      name="description"
+      content="A tiny, gentle water reminder. One question, one answer."
+    />
+    <link rel="canonical" href="https://isittimeforwater.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Is it time for water?" />
+    <meta
+      property="og:description"
+      content="A tiny, gentle water reminder. One question, one answer."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://isittimeforwater.com/" />
+
+    <!-- Minimal styling -->
+    <style>
+      :root { color-scheme: light dark; }
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+      main { max-width: 740px; margin: 0 auto; padding: 28px 18px 60px; }
+      .card { border: 1px solid rgba(127,127,127,.25); border-radius: 16px; padding: 18px; }
+      h1 { font-size: 28px; margin: 0 0 10px; letter-spacing: -0.02em; }
+      #answer { font-size: 56px; margin: 6px 0 6px; font-weight: 750; letter-spacing: -0.03em; }
+      #reason { margin: 0 0 14px; opacity: .85; }
+      .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+      button { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 10px 14px; font-size: 16px; cursor: pointer; }
+      button:hover { opacity: .9; }
+      .muted { font-size: 13px; opacity: .75; line-height: 1.45; }
+      .spacer { height: 14px; }
+
+      /* Monetization block (only shown after intent) */
+      #helper { display: none; margin-top: 14px; }
+      #helper a { text-decoration: none; border-bottom: 1px solid currentColor; }
+      .badge { display:inline-block; font-size:12px; padding: 3px 8px; border: 1px solid rgba(127,127,127,.35); border-radius: 999px; opacity: .85; }
+
+      /* Section headings */
+      h2 { font-size: 18px; margin: 22px 0 8px; letter-spacing: -0.01em; }
+      ul { margin: 8px 0 0 18px; }
+      li { margin: 6px 0; }
+
+      footer { margin-top: 22px; }
+    </style>
+
+    <!-- Structured data: WebApplication + FAQ (AI/SEO friendly) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Is it time for water?",
+        "url": "https://isittimeforwater.com/",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "description": "A tiny, gentle water reminder. One question, one answer."
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is it time for water?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This site provides a gentle reminder based on time since your last check or confirmation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this medical advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is a simple reminder tool, not medical advice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I use it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Check the answer, then click “I drank water” after you drink. The site will remember your last time on this device."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <main>
+      <div class="card">
+        <h1>Is it time for water?</h1>
+
+        <div id="answer" aria-live="polite">Probably.</div>
+        <p id="reason">Gentle reminder based on time since your last check.</p>
+
+        <div class="row">
+          <button id="drankBtn" type="button">I drank water</button>
+          <span class="muted" id="lastLabel">Last: —</span>
+        </div>
+
+        <div id="helper" class="card" style="padding: 14px; border-radius: 14px;">
+          <div class="row" style="justify-content: space-between;">
+            <strong>For chronic forgetters</strong>
+            <span class="badge">optional</span>
+          </div>
+          <p class="muted" style="margin-top: 8px;">
+            If you often forget, a bottle with a gentle reminder can help.
+            <a id="affiliateLink" href="#" rel="nofollow sponsored noopener" target="_blank">View a reminder bottle →</a>
+          </p>
+          <p class="muted" style="margin: 0;">
+            Some links may earn a commission.
+          </p>
+        </div>
+
+        <div class="spacer"></div>
+        <p class="muted">
+          This is a gentle reminder tool. Not medical advice.
+        </p>
+      </div>
+
+      <h2>How this works</h2>
+      <ul class="muted">
+        <li>It remembers your last “I drank water” click on this device.</li>
+        <li>If it has been a while, it nudges you with a simple answer.</li>
+        <li>No account. No streaks. No guilt.</li>
+      </ul>
+
+      <h2>Use with ChatGPT or assistants</h2>
+      <p class="muted">
+        Copy/paste this prompt:
+      </p>
+      <div class="card muted" style="border-radius: 14px;">
+        “Check isittimeforwater.com and tell me what it says.”
+      </div>
+
+      <h2>For builders</h2>
+      <p class="muted">
+        A tiny machine-readable endpoint is available at
+        <a href="/answer.json">/answer.json</a>.
+      </p>
+
+      <footer class="muted">
+        Built to be simple and reusable by people, assistants, and tools.
+      </footer>
+
+      <script src="./app.js"></script>
+    </main>
+  </body>
 </html>
