@@ -1,0 +1,8 @@
+{
+  "question": "Is it time for water?",
+  "answer": "Probably",
+  "confidence": "gentle reminder",
+  "reason": "Time since last confirmation on this device",
+  "updated": "2025-12-16",
+  "source": "https://isittimeforwater.com"
+}
